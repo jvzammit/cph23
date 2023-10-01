@@ -20,6 +20,7 @@ readme = "README.md"
 python = "~3.11"
 django = "^4.2.5"
 time-machine = "^2.12.0"
+djangorestframework = "^3.14.0"
 
 [tool.poetry.group.dev.dependencies]
 factory-boy = "^3.3.0"
