@@ -26,13 +26,13 @@ class CustomerTests(TestCase):
         # Then customer's name is returned
         self.assertEqual(str(customer), "John Doe")
 
-    def test_str_returns_not_available(self):
+    def test_str_returns_code(self):
         # Given customer with both email and name details unset
-        customer = CustomerFactory(email="", first_name="", last_name="")
+        customer = CustomerFactory(email="", first_name="", last_name="", code="test-customer")
 
         # When __str__ is called
         # Then 'n/a' is returned
-        self.assertEqual(str(customer), "n/a")
+        self.assertEqual(str(customer), "test-customer")
 
 
 class OrderQuerysetTests(TestCase):

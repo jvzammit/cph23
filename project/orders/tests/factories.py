@@ -7,6 +7,7 @@ class AddressFactory(factory.django.DjangoModelFactory):
 
 
 class CustomerFactory(factory.django.DjangoModelFactory):
+    code = factory.Sequence(lambda n: f"cust-{n:03d}")
     shipping_address = factory.SubFactory(AddressFactory)
 
     class Meta:

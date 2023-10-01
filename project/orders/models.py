@@ -9,6 +9,7 @@ class Address(models.Model):
 
 
 class Customer(models.Model):
+    code = models.CharField(max_length=16, unique=True)
     email = models.EmailField(null=True, blank=True)
     first_name = models.CharField(max_length=150, blank=True)
     last_name = models.CharField(max_length=150, blank=True)
@@ -21,7 +22,7 @@ class Customer(models.Model):
             return self.email
         if self.first_name and self.last_name:
             return f"{self.first_name} {self.last_name}"
-        return "n/a"
+        return self.code
 
 
 class OrderQueryset(models.QuerySet):
