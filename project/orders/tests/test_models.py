@@ -51,7 +51,4 @@ class OrderQuerysetTests(TestCase):
         queryset = Order.objects.all().created_today()
 
         # Then only the orders created are returned
-        self.assertQuerysetEqual(
-            queryset,
-            queryset.filter(id__in=[order2.id, order3.id]),
-        )
+        self.assertQuerysetEqual(queryset, [order2, order3])
